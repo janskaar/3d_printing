@@ -47,14 +47,10 @@ cable_slot2 = cable_slot2.union(\
     )
 
 
-
-
-
 base_plate = base_plate\
         .cut(cable_slot1)\
         .cut(cable_slot2)
 
-#show_object(cable_slot1)
 base_plate = base_plate.pushPoints(((screw_hole_d1/2., screw_hole_d2/2.),
                                (screw_hole_d1/2., -screw_hole_d2/2.),
                                (-screw_hole_d1/2., screw_hole_d2/2.),
@@ -62,9 +58,9 @@ base_plate = base_plate.pushPoints(((screw_hole_d1/2., screw_hole_d2/2.),
         .circle(3.)\
         .cutThruAll()
 
-
-
-
+base_plate = base_plate.pushPoints(((0,50),))\
+        .rect(12, 7)\
+        .cutThruAll()
 
 
 
